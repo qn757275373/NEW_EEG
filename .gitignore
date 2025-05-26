@@ -1,0 +1,11 @@
+**/.idea
+
+**/data
+
+**/checkpoints/*
+
+**/log/*
+
+**/.vscode
+
+**/__pycache__
