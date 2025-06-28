@@ -174,8 +174,8 @@ class FT_Fuse_EncoderLayer(nn.Module):
         # enc_outputs += fourier_transform(enc_outputs)
         # enc_outputs = self.pos_ffn(enc_outputs)  # enc_outputs: [batch_size, src_len, d_model]
         # token fusion cross-attention
-        # Fre_outputs = self.pos_ffn(Fre_outputs)
-        # Time_outputs = self.pos_ffn(Time_outputs)
+        Fre_outputs = self.pos_ffn(Fre_outputs)
+        Time_outputs = self.pos_ffn(Time_outputs)
         Fre_tokens =  Fre_outputs[:,:4,:]
         Time_tokens = Time_outputs[:,:4,:]
         fusion_token1 = torch.cat((Time_tokens,Fre_tokens), dim=1)
