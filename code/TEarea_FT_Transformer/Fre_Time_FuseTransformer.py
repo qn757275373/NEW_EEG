@@ -299,9 +299,9 @@ class channel_attention(nn.Module):
 
         channel_atten_score = F.softmax(channel_atten, dim=-1)
         # ====================save channel_atten_score
-        if(opt.current_epoch == 1 or opt.current_epoch % 50 == 0):
-            np.save("/home/mly/PycharmProjects/weizhan-eeg/egg/code/TEarea_FT_Transformer/beforF_channelAttention_map/attention_map_time_" + '%d' % opt.current_epoch + ".npy",
-                    channel_atten_score[0, :, :, :].detach().cpu().numpy())
+        # if(opt.current_epoch == 1 or opt.current_epoch % 50 == 0):
+        #     np.save("/home/mly/PycharmProjects/weizhan-eeg/egg/code/TEarea_FT_Transformer/beforF_channelAttention_map/attention_map_time_" + '%d' % opt.current_epoch + ".npy",
+        #             channel_atten_score[0, :, :, :].detach().cpu().numpy())
         # ====================end save channel_atten_score
         channel_atten_score = self.drop_out(channel_atten_score)
 
